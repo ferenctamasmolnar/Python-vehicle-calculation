@@ -70,8 +70,16 @@ button.place(relx=0.27, rely=0.55, anchor='n', width=200)
 #parameters
 def submit(): 
     # Get the input from both text boxes 
-    mass = entry1.get() 
-    wradius = entry2.get() 
+    vmass = entry1.get() 
+    wradius = entry2.get()
+    farea = entry3.get() 
+    dragcoeff = entry4.get() 
+    rollres = entry5.get() 
+    gratio = entry6.get() 
+    weightfa = entry7.get() 
+    weightra = entry8.get() 
+    cog = entry9.get() 
+    wheelb = entry10.get()  
 
 # Create the first label and text box 
 label1 = tk.Label(root, text="Vehicle mass:",font=('Helvetica', 10, 'bold')) 
