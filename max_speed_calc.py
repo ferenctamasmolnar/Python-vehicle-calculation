@@ -4,7 +4,11 @@ from tkinter.filedialog import askopenfilename
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import sys
-from tkinter import messagebox 
+from tkinter import messagebox
+from tkinter import ttk
+
+def validate_entry(text):
+    return text.isdecimal()
 
 # Tkinter initialization
 root = tk.Tk()
@@ -84,53 +88,73 @@ def submit():
 # Create the first label and text box 
 label1 = tk.Label(root, text="Vehicle mass:",font=('Helvetica', 10, 'bold')) 
 label1.place(relx=0.65, rely = 0.1, anchor='n') 
-entry1 = tk.Entry(root) 
+entry1 = tk.Entry(root,justify='center',validate="key",
+    validatecommand=(root.register(validate_entry), "%S"))
+entry1.insert(0,"1200")  
 entry1.place(relx=0.65, rely = 0.125, anchor = 'n')
  
 # Create the second label and text box 
 label2 = tk.Label(root, text="Tire w:",font=('Helvetica', 10, 'bold')) 
 label2.place(relx=0.65, rely = 0.15, anchor = 'n') 
-entry2 = tk.Entry(root) 
+entry2 = tk.Entry(root,justify='center',validate="key",
+    validatecommand=(root.register(validate_entry),"%S"))
+entry2.insert(0,float("0.352")) 
 entry2.place(relx=0.65, rely = 0.175, anchor = 'n') 
  
 label3 = tk.Label(root, text="Frontal area:",font=('Helvetica', 10, 'bold')) 
 label3.place(relx=0.65, rely = 0.2, anchor='n') 
-entry3 = tk.Entry(root) 
+entry3 = tk.Entry(root,justify='center',validate="key",
+    validatecommand=(root.register(validate_entry), "%S"))
+entry3.insert(0,"2.713") 
 entry3.place(relx=0.65, rely = 0.225, anchor='n')
 
 label4 = tk.Label(root, text="Drag:",font=('Helvetica', 10, 'bold')) 
 label4.place(relx=0.65, rely = 0.25, anchor='n') 
-entry4 = tk.Entry(root) 
+entry4 = tk.Entry(root,justify='center',validate="key",
+    validatecommand=(root.register(validate_entry), "%S"))
+entry4.insert(0,"0.313") 
 entry4.place(relx=0.65, rely = 0.275, anchor='n')
 
 label5 = tk.Label(root, text="Rolling:",font=('Helvetica', 10, 'bold')) 
 label5.place(relx=0.65, rely = 0.3, anchor='n') 
-entry5 = tk.Entry(root) 
+entry5 = tk.Entry(root,justify='center',validate="key",
+    validatecommand=(root.register(validate_entry), "%S"))
+entry5.insert(0,"0.008") 
 entry5.place(relx=0.65, rely = 0.325, anchor='n')
 
 label6 = tk.Label(root, text="Gear ratio:",font=('Helvetica', 10, 'bold')) 
 label6.place(relx=0.85, rely = 0.1, anchor='n') 
-entry6 = tk.Entry(root) 
+entry6 = tk.Entry(root,justify='center',validate="key",
+    validatecommand=(root.register(validate_entry), "%S"))
+entry6.insert(0,"1") 
 entry6.place(relx=0.85, rely = 0.125, anchor='n')
 
 label7 = tk.Label(root, text="Weight on front axle:",font=('Helvetica', 10, 'bold')) 
 label7.place(relx=0.85, rely = 0.15, anchor='n') 
-entry7 = tk.Entry(root) 
+entry7 = tk.Entry(root,justify='center',validate="key",
+    validatecommand=(root.register(validate_entry), "%S"))
+entry7.insert(0,"48") 
 entry7.place(relx=0.85, rely = 0.175, anchor='n')
 
 label8 = tk.Label(root, text="Weight on rear axle:",font=('Helvetica', 10, 'bold')) 
 label8.place(relx=0.85, rely = 0.2, anchor='n') 
-entry8 = tk.Entry(root) 
+entry8 = tk.Entry(root,justify='center',validate="key",
+    validatecommand=(root.register(validate_entry), "%S"))
+entry8.insert(0,"52") 
 entry8.place(relx=0.85, rely = 0.225, anchor='n')
 
 label9 = tk.Label(root, text="CoG:",font=('Helvetica', 10, 'bold')) 
 label9.place(relx=0.85, rely = 0.25, anchor='n') 
-entry9 = tk.Entry(root) 
+entry9 = tk.Entry(root,justify='center',validate="key",
+    validatecommand=(root.register(validate_entry), "%S"))
+entry9.insert(0,"0.51") 
 entry9.place(relx=0.85, rely = 0.275, anchor='n')
 
 label10 = tk.Label(root, text="Wheelbase:",font=('Helvetica', 10, 'bold')) 
 label10.place(relx=0.85, rely = 0.3, anchor='n') 
-entry10 = tk.Entry(root) 
+entry10 = tk.Entry(root,justify='center',validate="key",
+    validatecommand=(root.register(validate_entry), "%S"))
+entry10.insert(0,"2.89") 
 entry10.place(relx=0.85, rely = 0.325, anchor='n')
 
 # Create a submit button 
